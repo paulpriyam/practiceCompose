@@ -22,13 +22,18 @@ fun QuoteList(
         Quote(text = "To Kill a Mockingbird", category = "Harper Lee")
     ),
     modifier: Modifier = Modifier.fillMaxSize(),
-    paddingTop: PaddingValues = PaddingValues(40.dp)
+    paddingTop: PaddingValues = PaddingValues(40.dp),
+    onItemClicked: (quote: Quote) -> Unit = {}
 ) {
     LazyColumn(
-        modifier = Modifier.padding(paddingTop).padding(horizontal = 8.dp),
+        modifier = Modifier
+            .padding(paddingTop)
+            .padding(horizontal = 8.dp),
         content = {
             items(data) {
-                QuoteItem(it)
+                QuoteItem(it) { quote->
+                    onItemClicked.invoke(quote)
+                }
             }
         })
 }

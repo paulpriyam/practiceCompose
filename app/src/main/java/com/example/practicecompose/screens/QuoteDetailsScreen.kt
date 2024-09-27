@@ -16,17 +16,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import com.example.practicecompose.component.QuoteDetail
 import com.example.practicecompose.model.Quote
 
-@Preview
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun QuoteDetailsScreen(
     quote: Quote = Quote(
         text = "The Chronicles of Narnia",
         category = "C.S. Lewis"
-    )
+    ),
+    navController: NavController
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -41,7 +43,7 @@ fun QuoteDetailsScreen(
                 },
                 navigationIcon = {
                     IconButton(onClick = {
-
+                        navController.popBackStack()
                     }) {
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
