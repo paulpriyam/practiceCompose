@@ -14,10 +14,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.practicecompose.component.QuoteList
 import com.example.practicecompose.model.Quote
 
-@Preview
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun QuoteListScreen(data:List<Quote>) {
+fun QuoteListScreen(data: List<Quote>) {
     Scaffold(
         topBar = {
             TopAppBar(title = {
@@ -29,7 +28,7 @@ fun QuoteListScreen(data:List<Quote>) {
             })
         }, containerColor = MaterialTheme.colorScheme.onPrimaryContainer
     ) { padding ->
-        QuoteList(data,paddingTop = padding)
+        QuoteList(data, paddingTop = padding)
     }
 }
 

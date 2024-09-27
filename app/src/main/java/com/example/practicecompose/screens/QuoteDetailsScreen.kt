@@ -2,6 +2,7 @@ package com.example.practicecompose.screens
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -23,8 +24,8 @@ import com.example.practicecompose.model.Quote
 @Composable
 fun QuoteDetailsScreen(
     quote: Quote = Quote(
-        title = "The Chronicles of Narnia",
-        author = "C.S. Lewis"
+        text = "The Chronicles of Narnia",
+        category = "C.S. Lewis"
     )
 ) {
     Scaffold(
@@ -32,9 +33,11 @@ fun QuoteDetailsScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Text("Detail Screen",
+                    Text(
+                        "Detail Screen",
                         modifier = Modifier.fillMaxWidth(),
-                        textAlign = TextAlign.Center)
+                        textAlign = TextAlign.Center
+                    )
                 },
                 navigationIcon = {
                     IconButton(onClick = {
@@ -48,8 +51,9 @@ fun QuoteDetailsScreen(
                 }
             )
         },
-        containerColor = MaterialTheme.colorScheme.onPrimaryContainer) { paddingValues ->
-        QuoteDetail(quote)
+        containerColor = MaterialTheme.colorScheme.onPrimaryContainer
+    ) { paddingValues ->
+        QuoteDetail(Modifier.padding(paddingValues), quote)
 
     }
 

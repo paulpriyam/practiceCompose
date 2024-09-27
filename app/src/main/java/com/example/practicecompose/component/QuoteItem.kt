@@ -28,8 +28,8 @@ import com.example.practicecompose.ui.theme.Purple40
 @Composable
 fun QuoteItem(
     quote: Quote = Quote(
-        title = "The Chronicles of Narnia",
-        author = "C.S. Lewis"
+        text = "The Chronicles of Narnia",
+        category = "C.S. Lewis"
     )
 ) {
     Card(
@@ -53,7 +53,7 @@ fun QuoteItem(
             Spacer(modifier = Modifier.size(16.dp))
             Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.SpaceEvenly) {
                 Text(
-                    text = quote.title,
+                    text = quote.text,
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.padding(0.dp, 0.dp, 0.dp, 8.dp)
                 )
@@ -64,7 +64,7 @@ fun QuoteItem(
                         .background(Purple40)
                 )
                 Text(
-                    text = quote.author,
+                    text = quote.category,
                     style = MaterialTheme.typography.bodySmall,
                     modifier = Modifier.padding(0.dp, 4.dp, 0.dp, 4.dp)
                 )
