@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("kapt")
+    id("kotlin-parcelize")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -59,8 +62,28 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    // hilt
+    implementation (libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+
+    // retrofit
+    implementation(libs.retrofit)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+    implementation(libs.converter.gson)
+
     implementation("androidx.compose.material:material-icons-extended:1.5.4")
     implementation("com.google.code.gson:gson:2.11.0")
+
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5")
+
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.5")
+
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.5")
+
+    implementation ("androidx.navigation:navigation-compose:2.8.1")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

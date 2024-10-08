@@ -2,6 +2,7 @@ package com.example.practicecompose.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -28,15 +29,19 @@ import com.example.practicecompose.ui.theme.Purple40
 @Composable
 fun QuoteItem(
     quote: Quote = Quote(
-        title = "The Chronicles of Narnia",
-        author = "C.S. Lewis"
-    )
+        text = "The Chronicles of Narnia",
+        category = "C.S. Lewis"
+    ),
+    onCLick: (quote: Quote) -> Unit,
 ) {
     Card(
         elevation = CardDefaults.elevatedCardElevation(defaultElevation = 4.dp),
         modifier = Modifier
             .fillMaxWidth()
             .padding(4.dp)
+            .clickable {
+                onCLick.invoke(quote)
+            }
     ) {
         Row(
             modifier = Modifier
@@ -53,7 +58,7 @@ fun QuoteItem(
             Spacer(modifier = Modifier.size(16.dp))
             Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.SpaceEvenly) {
                 Text(
-                    text = quote.title,
+                    text = quote.text,
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.padding(0.dp, 0.dp, 0.dp, 8.dp)
                 )
@@ -64,7 +69,7 @@ fun QuoteItem(
                         .background(Purple40)
                 )
                 Text(
-                    text = quote.author,
+                    text = quote.category,
                     style = MaterialTheme.typography.bodySmall,
                     modifier = Modifier.padding(0.dp, 4.dp, 0.dp, 4.dp)
                 )

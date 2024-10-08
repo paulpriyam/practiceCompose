@@ -8,7 +8,6 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.practicecompose.model.Quote
 
@@ -16,20 +15,25 @@ import com.example.practicecompose.model.Quote
 @Composable
 fun QuoteList(
     data: List<Quote> = listOf(
-        Quote(title = "To Kill a Mockingbird", author = "Harper Lee"),
-        Quote(title = "1984", author = "George Orwell"),
-        Quote(title = "To Kill a Mockingbird", author = "Harper Lee"),
-        Quote(title = "To Kill a Mockingbird", author = "Harper Lee"),
-        Quote(title = "To Kill a Mockingbird", author = "Harper Lee")
+        Quote(text = "To Kill a Mockingbird", category = "Harper Lee"),
+        Quote(text = "1984", category = "George Orwell"),
+        Quote(text = "To Kill a Mockingbird", category = "Harper Lee"),
+        Quote(text = "To Kill a Mockingbird", category = "Harper Lee"),
+        Quote(text = "To Kill a Mockingbird", category = "Harper Lee")
     ),
     modifier: Modifier = Modifier.fillMaxSize(),
-    paddingTop: PaddingValues = PaddingValues(40.dp)
+    paddingTop: PaddingValues = PaddingValues(40.dp),
+    onItemClicked: (quote: Quote) -> Unit = {}
 ) {
     LazyColumn(
-        modifier = Modifier.padding(paddingTop).padding(horizontal = 8.dp),
+        modifier = Modifier
+            .padding(paddingTop)
+            .padding(horizontal = 8.dp),
         content = {
             items(data) {
-                QuoteItem(it)
+                QuoteItem(it) { quote->
+                    onItemClicked.invoke(quote)
+                }
             }
         })
 }

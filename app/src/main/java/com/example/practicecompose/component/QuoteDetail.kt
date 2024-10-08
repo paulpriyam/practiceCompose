@@ -25,15 +25,20 @@ import com.example.practicecompose.model.Quote
 
 @Preview(showBackground = true)
 @Composable
-fun QuoteDetail(quote: Quote = Quote(title = "The Chronicles of Narnia", author = "C.S. Lewis")) {
+fun QuoteDetail(
+    modifier: Modifier = Modifier,
+    quote: Quote = Quote(text = "The Chronicles of Narnia", category = "C.S. Lewis"),
+) {
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize(1f), contentAlignment = Alignment.Center
 
     ) {
 
         Card(
-            modifier = Modifier.fillMaxWidth(0.8f).height(200.dp),
+            modifier = Modifier
+                .fillMaxWidth(0.8f)
+                .height(200.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
@@ -47,10 +52,10 @@ fun QuoteDetail(quote: Quote = Quote(title = "The Chronicles of Narnia", author 
                 )
                 Spacer(Modifier.height(8.dp))
                 Text(
-                    text = quote.title,
+                    text = quote.text,
                     style = MaterialTheme.typography.titleMedium
                 )
-                Text(text = quote.author, modifier = Modifier.padding(8.dp, 16.dp, 0.dp, 0.dp))
+                Text(text = quote.category, modifier = Modifier.padding(8.dp, 16.dp, 0.dp, 0.dp))
             }
         }
     }
