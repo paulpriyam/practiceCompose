@@ -4,6 +4,7 @@ plugins {
     kotlin("kapt")
     id("kotlin-parcelize")
     id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -85,6 +86,11 @@ dependencies {
     implementation ("androidx.navigation:navigation-compose:2.8.1")
     implementation ("com.google.accompanist:accompanist-pager-indicators:0.30.1")
     implementation ("androidx.constraintlayout:constraintlayout-compose:1.0.1")
+
+    //Firebase
+    implementation(platform("com.google.firebase:firebase-bom:33.4.0"))
+    implementation("com.google.firebase:firebase-messaging")
+
 
 
     testImplementation(libs.junit)

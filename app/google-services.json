@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "605812607039",
+    "firebase_url": "https://forgetnothing-38dd5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "forgetnothing-38dd5",
+    "storage_bucket": "forgetnothing-38dd5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605812607039:android:6b2d537860fb0cee87908a",
+        "android_client_info": {
+          "package_name": "com.example.forgetnothing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvLU6T5cuN8kew0XfJNuMOal4_lP6oRBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605812607039:android:6076a85fe2586b2387908a",
+        "android_client_info": {
+          "package_name": "com.example.practicecompose"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvLU6T5cuN8kew0XfJNuMOal4_lP6oRBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
